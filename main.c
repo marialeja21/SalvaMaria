@@ -1,12 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int game;
 char* palabra;
 
 void nombreAplicacion (){
-    printf("\t SalvaMaria\n Escoge el juego que desees jugar\n 1.Adivina lo que soy\n 2.Sabiendo \n 3.Pensemos\n ");
+    printf("\t SalvaMaria\n Escoge el juego que desees jugar\n 1.Adivina lo que soy\n 2.Sabiendo \n 3.Pensemos\n  4.Salir \n ");
     scanf("%d",&game);
+}
+int siguiente(){
+    int retorno;
+    printf("si quiere volver a comenzar escriba 1, si desea volver al menu escriba 2 \n");
+    scanf("%d",&retorno);
+    if (retorno == 1){
+        main();
+    }
+    return 0;
 }
     
 char AdivinaSoy(){
@@ -14,7 +24,7 @@ char AdivinaSoy(){
     printf("Tengo agujas y no se coser, tengo numeros y no se leer, Quien soy?");
     scanf("%s",&palabra);
     if (strcmp(palabra, "modista")== 0){
-        printf("ups, no es, intentalo otr vez");
+        printf("ups, no es, intentalo otra vez");
         scanf("%s",&palabra);
     }else if (strcmp(palabra, "reloj")== 0){
         printf("Correcto\n ");
@@ -40,6 +50,7 @@ char AdivinaSoy(){
     }else{
         printf("La respuesta correcta es la cebolla\n\t Sigamos adivinando\n");
     }
+    siguiente();
 }
 int Sabiendo(){
     printf("escoge la opcion correcta");
@@ -54,6 +65,9 @@ int main(int argc, char const *argv[]){
         Sabiendo();
     }else if (game == 3){
         printf("color");
+    }else{
+       printf("Buena vida");
+       exit(0);
     }
     return 0;
 }
