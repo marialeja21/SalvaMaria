@@ -53,7 +53,50 @@ char AdivinaSoy(){
     siguiente();
 }
 int Sabiendo(){
-    printf("escoge la opcion correcta");
+    char saber[11];
+    printf("\n  Organiza el nombre del animal\n g i c o m u l a r e\n");
+    scanf("%s",saber);
+    if (strcmp(saber, "murcielago")== 0){
+        printf("Correcto, su puntaje es 3");
+    }else{
+        printf("La respuesta correcta es murcielago, su puntaje es 0");
+    }
+    printf("\n El siguiente nombre de animal a organizar es: r i c o l o c o d\n");
+    scanf("%s",saber);
+    if (strcmp(saber, "cocodrilo")== 0){
+        printf("Correcto, su puntaje es 3");
+    }else{
+        printf(" La respuesta correcta es cocodrilo");
+    }
+    printf("\n El siguiente nombre de animal a organizar es: l l e n a b a\n");
+    scanf("%s",saber);
+    if (strcmp(saber, "ballena")== 0){
+        printf("Correcto, su puntaje es 3 ");
+    }else{
+        printf("\nLa respuesta correcta es ballena");
+    }
+    siguiente();
+}
+int pensemos(){
+    printf("Sume las siguientes operaciones\n");
+    srand(time(NULL));
+
+    for (int i = 0; i < 3; i++){
+    int  numerosVasriados= rand() % 21, seguandoNumero= rand() % 21, suma;
+    printf("Suma: %d + %d\n", numerosVasriados,seguandoNumero);
+    scanf("%d", &suma);
+
+    if (suma == numerosVasriados + seguandoNumero){
+        printf("Correcto, sigamos\n");
+        }
+    else{
+        printf("Incorrecto\n ");
+        suma = numerosVasriados + seguandoNumero;
+        printf("La respuesta era %d\n",suma);
+    }
+    }
+    siguiente();
+    return 0;
 }
 int main(int argc, char const *argv[]){
     nombreAplicacion();
